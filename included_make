@@ -39,7 +39,7 @@ ${pdf_dir}/%.pdf : ${talks_dir}/%.tex
 	cp $(patsubst %.tex, %.pdf, $<) $@
 
 ${pages_dir}/%/index.html : ${talks_dir}/%/notes.db $(TEMPLATES)/config.xsl
-	xmlto -m $(TEMPLATES)/config.xsl --skip-validation -o $(@D) html $<
+	xmlto -m $(TEMPLATES)/config.xsl --stringparam html.stylesheet=../../$(BUILDER)/stylesheets/docbook.css --skip-validation -o $(@D) html $<
 
 ${talks_dir}/%/notes.db : ${talks_dir}/%/notes.tex
 	mkdir -p ${@D}
