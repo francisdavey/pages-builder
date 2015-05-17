@@ -1,6 +1,6 @@
 # requires greadlink (available via brew install coreutils on OSX)
 
-BUILDER=builder
+BUILDER=pages-builder
 
 TEMPLATES=$(BUILDER)/templates
 TEX=$(BUILDER)/tex
