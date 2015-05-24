@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Defamation by francisdavey</title>
+    <title>$project_title$ by francisdavey</title>
 
     <link rel="stylesheet" href="$stylesheets$/styles.css">
     <link rel="stylesheet" href="$stylesheets$/pygment_trac.css">
@@ -15,16 +15,16 @@
   <body>
     <div class="wrapper">
 <header>
-        <h1>Defamation for internet hosts</h1>
-        <p>How to avoid lawsuits in the age of user-generated content</p>
+        <h1>$project_title$</h1>
+        <p>$project_subtitle$</p>
 
-        <p class="view"><a href="https://github.com/francisdavey/defamation">View the Project on GitHub <small>francisdavey/defamation</small></a></p>
+        <p class="view"><a href="https://github.com/francisdavey/$project_name$">View the Project on GitHub <small>francisdavey/$project_name$</small></a></p>
 
 
         <ul>
-          <li><a href="https://github.com/francisdavey/defamation/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/francisdavey/defamation/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/francisdavey/defamation">View On <strong>GitHub</strong></a></li>
+          <li><a href="https://github.com/francisdavey/$project_name$/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/francisdavey/$project_name$/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/francisdavey/$project_name$">View On <strong>GitHub</strong></a></li>
         </ul>
       </header>
 <section>

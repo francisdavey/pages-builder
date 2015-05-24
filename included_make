@@ -31,7 +31,7 @@ INDEXES=$(patsubst $(talks_dir)/%/notes.tex, $(pages_dir)/%/index.html, $(wildca
 all: index.html $(PDF_OBJS) $(INDEXES) # $(HTML_SLIDES)
 
 index.html: README.md $(TEMPLATES)/readme.FORMAT
-	pandoc README.md -o index.html --template=$(TEMPLATES)/readme.FORMAT --variable=stylesheets=$(STYLESHEETS)
+	pandoc README.md -o index.html --template=$(TEMPLATES)/readme.FORMAT -V stylesheets=$(STYLESHEETS) -V project_name=$(PROJECT_NAME) -V project_title=$(PROJECT_TITLE) -V project_subtitle=$(PROJECT_SUBTITLE)
 
 ${pdf_dir}/%.pdf : ${talks_dir}/%.tex
 	mkdir -p ${@D}
