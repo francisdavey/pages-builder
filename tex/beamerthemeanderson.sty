@@ -1,0 +1,68 @@
+\RequirePackage{color}
+\RequirePackage{fontspec}
+\RequirePackage[absolute, overlay]{textpos}
+
+% To match Powerpoint 4:3 aspect ratio
+% More work needed to deal with varied aspect ratios
+\RequirePackage{geometry}
+\geometry{paperwidth=25.4cm, paperheight=19.05cm}
+
+\setsansfont[
+    Extension=.otf,
+    UprightFont= *-regular,
+    BoldFont=*-bold,
+    ItalicFont=*-italic,
+    BoldItalicFont=*-bolditalic,
+]{texgyreheros}
+\setbeamerfont{title}{family=\sffamily, size={\fontsize{44}{44}}}
+\setbeamerfont{frametitle}{family=\sffamily, size={\fontsize{48}{48}}}
+\setbeamerfont{author}{family=\sffamily, size={\fontsize{18}{18}}}
+\setbeamerfont{date}{family=\sffamily, size={\fontsize{18}{18}}}
+\setbeamerfont{itemize/enumerate body}{family=\sffamily, size={\fontsize{18}{18}}}
+\setbeamerfont{itemize/enumerate subbody}{family=\sffamily, size={\fontsize{14}{14}}}
+
+
+
+%disable navigation
+\setbeamertemplate{background}{}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize items}[circle]
+
+\setbeamertemplate{title page}{
+  \begin{textblock*}{\paperwidth}(0cm, 0cm)
+    \includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{title_background.jpg}    
+  \end{textblock*}
+
+  % Anderson law template had a 0.25cm lmargin and a 0.13cm tmargin 
+  % which is included here.
+  \begin{textblock*}{24.2cm}(0.75cm, 5.26cm) 
+    \usebeamerfont{title}\parbox[t][3.0cm][c]{24.2cm}{\inserttitle}\par
+  \end{textblock*}
+
+  \begin{textblock*}{7cm}(17.9cm, 15.33cm) 
+    \usebeamerfont{author}\insertauthor\par
+  \end{textblock*}
+
+  \begin{textblock*}{7cm}(17.9cm, 16.33cm) 
+    \usebeamerfont{author}Anderson Law LLP\par
+  \end{textblock*}
+
+  \begin{textblock*}{7cm}(17.9cm, 17.35cm) 
+    \usebeamerfont{author}\insertdate\par
+  \end{textblock*}
+
+
+}
+
+
+\setbeamertemplate{frametitle}{
+  \begin{textblock*}{23.8cm}(1.65cm, 2.65cm) 
+    \usebeamerfont{title}\parbox[t][1.4cm][c]{23.8cm}{\insertframetitle}\par
+  \end{textblock*}
+}
+
+%\setbeamertemplate{itemize body begin}{\usebeamerfont{bullet}}
+
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{background.jpg}}
+
+\definecolor{andersonblue}{RGB}{28, 188, 175}
