@@ -12,8 +12,11 @@ TALKS=talks
 LATEXMK=latekmk
 XELATEX = /usr/local/texlive/2013basic/bin/universal-darwin/xelatex
 
-TEXINPUTS=$(greadlink -f $(TEX)):
+TEXINPUTS = $(abspath $(TEX)):
 export TEXINPUTS
+
+#$(info TEX="$(TEX)")
+#$(info TEXINPUTS="$(TEXINPUTS)")
 
 #SLIDES=$(wildcard $(TALKS)/*/slides.tex)
 #HTML_SLIDES=$(patsubst $(TALKS)/%, pages/%, $(SLIDES:.tex=.html))

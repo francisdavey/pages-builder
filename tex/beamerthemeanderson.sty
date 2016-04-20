@@ -1,6 +1,7 @@
 \RequirePackage{color}
 \RequirePackage{fontspec}
 \RequirePackage[absolute, overlay]{textpos}
+\RequirePackage{pgfpages}
 
 % To match Powerpoint 4:3 aspect ratio
 % More work needed to deal with varied aspect ratios
@@ -13,6 +14,7 @@
     BoldFont=*-bold,
     ItalicFont=*-italic,
     BoldItalicFont=*-bolditalic,
+    Ligatures=TeX,
 ]{texgyreheros}
 \setbeamerfont{title}{family=\sffamily, size={\fontsize{44}{44}}}
 \setbeamerfont{frametitle}{family=\sffamily, size={\fontsize{48}{48}}}
@@ -66,3 +68,19 @@
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{background.jpg}}
 
 \definecolor{andersonblue}{RGB}{28, 188, 175}
+
+%\setbeameroption{show notes on second screen}
+%\setbeamertemplate{note page}[plain]
+\setbeamerfont{note page}{family=\sffamily, size={\fontsize{16}{18}}}
+\setbeamertemplate{note page}{%
+  \vskip2.75cm
+  \setlength{\parskip}{1em}
+  \begin{minipage}{24.2cm}
+    \insertnote%
+  \end{minipage}
+}
+
+\setbeameroption{show notes}
+\pgfpagesuselayout{2 on 1} %[a4paper]
+
+\newcommand{\casename}[2]{{\it #1} #2}
