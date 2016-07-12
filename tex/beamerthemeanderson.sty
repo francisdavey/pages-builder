@@ -2,6 +2,7 @@
 \RequirePackage{fontspec}
 \RequirePackage[absolute, overlay]{textpos}
 \RequirePackage{pgfpages}
+\RequirePackage{parskip}
 
 % To match Powerpoint 4:3 aspect ratio
 % More work needed to deal with varied aspect ratios
@@ -20,8 +21,8 @@
 \setbeamerfont{frametitle}{family=\sffamily, size={\fontsize{48}{48}}}
 \setbeamerfont{author}{family=\sffamily, size={\fontsize{18}{18}}}
 \setbeamerfont{date}{family=\sffamily, size={\fontsize{18}{18}}}
-\setbeamerfont{itemize/enumerate body}{family=\sffamily, size={\fontsize{18}{18}}}
-\setbeamerfont{itemize/enumerate subbody}{family=\sffamily, size={\fontsize{14}{14}}}
+\setbeamerfont{itemize/enumerate body}{family=\sffamily, size={\fontsize{20}{20}}}
+\setbeamerfont{itemize/enumerate subbody}{family=\sffamily, size={\fontsize{18}{18}}}
 
 
 
@@ -61,6 +62,7 @@
   \begin{textblock*}{23.8cm}(1.65cm, 2.65cm) 
     \usebeamerfont{title}\parbox[t][1.4cm][c]{23.8cm}{\insertframetitle}\par
   \end{textblock*}
+  \vskip1.4cm
 }
 
 %\setbeamertemplate{itemize body begin}{\usebeamerfont{bullet}}
@@ -74,7 +76,6 @@
 \setbeamerfont{note page}{family=\sffamily, size={\fontsize{16}{18}}}
 \setbeamertemplate{note page}{%
   \vskip2.75cm
-  \setlength{\parskip}{1em}
   \begin{minipage}{24.2cm}
     \insertnote%
   \end{minipage}
@@ -84,3 +85,21 @@
 \pgfpagesuselayout{2 on 1} %[a4paper]
 
 \newcommand{\casename}[2]{{\it #1} #2}
+
+\newlength{\parskipbackup}
+\setlength{\parskipbackup}{\parskip}
+\newlength{\parindentbackup}
+\setlength{\parindentbackup}{\parindent}
+
+\let\notebackup\note
+\renewcommand{\note}[1]{\notebackup{%
+	\mode<handout>{\addtocounter{page}{-1}}%
+	\setlength{\parindent}{0ex}%
+	\setlength{\parskip}{10pt}%
+	\noindent%
+	%{\normalsize{}#1}%
+        {#1}%
+	\setlength{\parskip}{\parskipbackup}%
+	\setlength{\parindent}{\parindentbackup}%
+}%
+}
